@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.header {
+    border-bottom: solid white 3px;
+    box-shadow: 10px 10px 10px black;
+}
+
+#main {
+    max-width: 850px;
+}
+
+.badge {
+    border: solid #BDC3C7;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 0px;
+}
+
+.table {
+    border: solid #BDC3C7;
+    box-shadow: 10px 10px 10px black;
+}
+
+.btn {
+    border: solid white;
+    box-shadow: 10px 10px 10px black;
+}
+
