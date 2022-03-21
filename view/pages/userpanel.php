@@ -399,7 +399,9 @@
         </div><br>
 
         <?php 
-            require_once("../../controller/configPanel.php"); 
+            require_once("../../model/CRUD_card.class.php"); 
+            require_once("../../model/CRUD_image.class.php"); 
+            require_once("../../model/CRUD_user.class.php"); 
         ?>
 
         <table class="table table-secondary" id="tableCards">
@@ -415,7 +417,15 @@
                     <th scope="col">Registro</th>
                 </tr>
             </thead>
-            <?php while($cardsRow = $stmtReadCard->fetch(PDO::FETCH_ASSOC)) { ?>
+            <?php 
+                $crudCards = new CRUD_Cards;
+
+                $crudCards->insertCard(); 
+                $crudCards->alterCard();
+                $crudCards->deleteCard();
+
+                $stmtReadCard = $crudCards->selectCard();                
+                while($cardsRow = $stmtReadCard->fetch(PDO::FETCH_ASSOC)) { ?>
             
                 <tbody>
                 <tr>
@@ -427,7 +437,8 @@
                 </tr>             
             </tbody>
 
-            <?php }?>
+                <?php } ?>
+            
         </table>
 
         <table class="table table-secondary" id="tableImages">
@@ -441,7 +452,15 @@
                 </tr>
             </thead>
 
-            <?php while($imagesRow = $stmtReadImg->fetch(PDO::FETCH_ASSOC)) { ?>
+            <?php 
+                $crudImages = new CRUD_Images;
+
+                $crudImages->insertImage(); 
+                $crudImages->alterImage();
+                $crudImages->deleteImage();
+
+                $stmtReadImage = $crudImages->selectImages();                
+                while($imagesRow = $stmtReadImage->fetch(PDO::FETCH_ASSOC)) { ?>
 
             <tbody>
                 <tr>
@@ -468,7 +487,15 @@
                 </tr>
             </thead>
 
-            <?php while($userRow = $stmtReadUser->fetch(PDO::FETCH_ASSOC)) { ?>
+            <?php 
+                $crudUsers = new CRUD_Users;
+
+                $crudUsers->insertUser(); 
+                $crudUsers->alterUser();
+                $crudUsers->deleteUser();
+
+                $stmtReadUser = $crudUsers->selectUser();                
+                while($userRow = $stmtReadUser->fetch(PDO::FETCH_ASSOC)) { ?>
 
             <tbody>
                 <tr>

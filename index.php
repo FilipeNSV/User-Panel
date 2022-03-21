@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <!-- header -->
     <header class="header bg-primary">
 
