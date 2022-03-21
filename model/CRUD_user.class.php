@@ -1,6 +1,6 @@
 <?php 
 
-    class CRUD_Users{
+    class CRUD_User{
 
         private $conn;
 

@@ -10,9 +10,9 @@
 
         public function connection(){
             try{
-                $this->conn = new PDO("mysql: host=localhost; dbname=db04", "root", "");
+                $this->conn = new \PDO("mysql: host=localhost; dbname=db04", "root", "");
                 //echo "Connection Established Successfully!";
-            }catch(PDOException $erro){
+            }catch(\PDOException $erro){
                 echo "Connection Established Not Successfully. Erro: " . $erro->getMessage();
             }
         }
@@ -36,7 +36,7 @@
                 $stmtLogin->execute(); 
                 
                 if($stmtLogin->rowCount() !=0){
-                    $rowUser = $stmtLogin->fetch(PDO::FETCH_ASSOC);
+                    $rowUser = $stmtLogin->fetch(\PDO::FETCH_ASSOC);
                     if($this->dataUser['passwordLogin'] == $rowUser['passworduser']){
                         header("location: view/pages/userpanel.php");
                     }else{

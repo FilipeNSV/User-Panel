@@ -1,6 +1,6 @@
 <?php 
 
-    class CRUD_Images{
+    class CRUD_Image{
 
         private $conn;
 

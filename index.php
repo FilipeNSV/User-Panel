@@ -40,8 +40,8 @@
     </header><br><br>
 
     <?php
-        require_once("model/User.class.php");
-        
+        require_once("controller/autoload.php");
+
         $user = new User;
         $user->login();
         $user->register();

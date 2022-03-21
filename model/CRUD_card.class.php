@@ -1,6 +1,6 @@
 <?php 
 
-    class CRUD_Cards {
+    class CRUD_Card {
 
         public $conn;
 

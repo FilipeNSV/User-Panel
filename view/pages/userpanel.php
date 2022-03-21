@@ -399,9 +399,7 @@
         </div><br>
 
         <?php 
-            require_once("../../model/CRUD_card.class.php"); 
-            require_once("../../model/CRUD_image.class.php"); 
-            require_once("../../model/CRUD_user.class.php"); 
+            require_once("../../controller/autoload.php"); 
         ?>
 
         <table class="table table-secondary" id="tableCards">
@@ -418,7 +416,7 @@
                 </tr>
             </thead>
             <?php 
-                $crudCards = new CRUD_Cards;
+                $crudCards = new CRUD_Card;
 
                 $crudCards->insertCard(); 
                 $crudCards->alterCard();
@@ -453,7 +451,7 @@
             </thead>
 
             <?php 
-                $crudImages = new CRUD_Images;
+                $crudImages = new CRUD_Image;
 
                 $crudImages->insertImage(); 
                 $crudImages->alterImage();
@@ -488,7 +486,7 @@
             </thead>
 
             <?php 
-                $crudUsers = new CRUD_Users;
+                $crudUsers = new CRUD_User;
 
                 $crudUsers->insertUser(); 
                 $crudUsers->alterUser();
